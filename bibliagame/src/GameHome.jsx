@@ -9,12 +9,12 @@ function GameGlobal() {
   return (
     <>
       <Header />
-      <div className="min-h-screen flex flex-col">
-        <div className="flex-grow">
-          {/* Conteúdo principal da página */}
-        </div>
+     <main>
+      
+        <p className=' bg-red500 '>gf</p>
+     </main>
         <Footer />
-      </div>
+   
     </>
   )
 }
