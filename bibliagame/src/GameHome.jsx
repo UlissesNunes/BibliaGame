@@ -1,6 +1,6 @@
 
-import Header from './pages/header.jsx'
-import Footer from './pages/footer.jsx'
+import Header from '../../GameBiblia/challange1/src/pages/header.jsx'
+import Footer from '../../GameBiblia/challange1/src/pages/footer.jsx'
 import './GameGlobal.css'
 
 function GameGlobal() {
