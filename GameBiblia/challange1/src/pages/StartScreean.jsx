@@ -7,7 +7,7 @@ function StartScreean() {
     <h1 className="pt-6 pl-2 pr-2 text-center text-sm font-bold text-green-950">
       DESAFIO: Garanta a maior pontuação no jogo, são perguntas bíblicas onde você deverá preencher o nome de acordo com a dica fornecida.
     </h1>
-    <button className="mt-6 w-24 bg-green-950 text-white py-2 px-4 rounded-md cursor-pointer hover:bg-green-700 transition duration-300 font-bold">
+    <button className="mt-6 w-24 bg-green-900 text-white py-2 px-4 rounded-md cursor-pointer hover:bg-green-950 transition duration-300 font-bold">
       Iniciar
     </button>
 
