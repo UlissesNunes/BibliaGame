@@ -2,6 +2,10 @@
 
 import './GameBibliaGlobal.css'
 
+
+import HeaderGame from './pages/HeaderGame'
+import FooterGame from './pages/FooterGame'
+
 function GameBiblia() {
 
 
@@ -9,9 +13,12 @@ function GameBiblia() {
  
   return (
     <>
-   <div className="flex justify-center items-center h-screen">
+    <HeaderGame />
+   <main className="flex justify-center items-center h-screen">
   <p>Olá, Ulisses!</p>
-</div>
+</main>
+
+    <FooterGame />
 
    
 
