@@ -45,6 +45,10 @@ console.log(letterPrincipal)
     let letterDestructured = letterPrincipal.split("")
     letterDestructured = letterDestructured.map((l) => l.toLowerCase())
     console.log(letterDestructured)
+
+    setPickedList(pickedList) 
+    setPickedCategory(pickedCategory)
+    setLetters(letters)
 };
 
 
