@@ -22,8 +22,36 @@ function GameBiblia() {
   const [gameStage, setGameStage] = useState(stages[0])
   const [dataBiblia] = useState(DataBibliaList)
   console.log(dataBiblia)
- 
-  const StartGameOn = () => {
+
+
+  const [pickedList, setPickedList] = useState("")
+  const [pickedCategory, setPickedCategory] = useState("")
+  const [letters, setLetters] = useState([]) 
+
+// function que busca a categoria e a palavra aleatoria 
+  const pickedBibliandcategory = () => {
+    const categories = Object.keys(dataBiblia)
+    const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
+    console.log(category)
+  // function que desestrutura a palavra em letras
+  
+  const letterPrincipal = dataBiblia[category][Math.floor(Math.random() * dataBiblia[category].length)]
+console.log(letterPrincipal)
+    
+
+
+  console.log(letterPrincipal, category)
+  
+    let letterDestructured = letterPrincipal.split("")
+    letterDestructured = letterDestructured.map((l) => l.toLowerCase())
+    console.log(letterDestructured)
+};
+
+
+const StartGameOn = () => {
+
+  pickedBibliandcategory();
+
     setGameStage(stages[1])
   }
 
@@ -51,5 +79,6 @@ function GameBiblia() {
   )
 }
 
+  export default GameBiblia
 
-export default GameBiblia
+
