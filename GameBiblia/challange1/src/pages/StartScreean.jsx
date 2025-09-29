@@ -14,6 +14,8 @@ function StartScreean({StartGameOn}) {
     <img src="src/assets/FUNDOVERDE.png" alt="" className="w-auto mt-10 p-4"/>
 
     <p className="text-green-950 w-34 p-5 text-sm">Tudo posso naquele que me fortalece - <br /><strong>Filipenses 4:13</strong></p>
+   
+   
   </main>
 </> 
   )
