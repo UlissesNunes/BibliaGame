@@ -1,21 +1,37 @@
+import { useState, useRef } from "react"
+function GameOn({LetterVerify,
+  pickedList, pickedCategory, letters, wrongLetters, guessedLetters, guesses, score
+})
 
-function GameOn({LetterVerify}) {
+{ 
+  const [letter, setLetter] = useState("")
+
+  const letterInputRef = useRef(null)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    LetterVerify(letter)
+    setLetter("")
+
+    letterInputRef.current.focus()
+  }
   return (
     <>
     <main className="flex flex-col items-center h-screen bg-gradient-to-b from-green-50  to-green-200">
-      <span className=" text-green-950 text-sm mb-10 p-3">Pontuação: <strong>000</strong></span>
+      <span className=" text-green-950 text-sm mb-10 p-3">Pontuação: {score}</span>
       <h1 className=" flex text-slate-600 text-2xl p-2">Quem sou eu?</h1>
       <h3 className="flex text-green-950 text-sm mb-4 italic "
-      >Dica sobre a palavra: <span className="text-green-700 pl-3">DICA..</span></h3>
-      <p>Você ainda tem XXXX tentativa(s)</p>
+      >Dica sobre a palavra:<span className="text-green-700 pl-3">{pickedCategory }</span></h3>
+      <p>Você ainda tem {guesses} tentativa(s)</p>
       <section className="flex flex-wrap text-uppercase text-3xl mb-4 gap-2 bg-gradient-to-b from-white  to-green-50 border-4 border-green-900 p-8 rounded-lg 
       ">
-        <span className="border-4 border-black p-2 w-10">A</span>
-        <span className="border-4 border-black p-2 w-10">A</span>
-        <span className="border-4 border-black p-2 w-10">A</span>
-        <span className="border-4 border-black p-2 w-10">A</span>
-        <span className="border-4 border-black p-2 w-10">A</span>
-        
+       {letters.map((letter, i) => (
+        guessedLetters.includes(letter) ? (
+          <span key={i} className="border-b-4 border-green-900 w-10 h-12 text-center text-white">{letter} </span>
+        ) : (
+          <span key={i} className="border-b-4 border-green-900 w-10 text-center"> </span>
+        )
+       ))} 
       </section>
 
     <section className=" mb-40 p-4">
@@ -24,11 +40,15 @@ function GameOn({LetterVerify}) {
   </p>
 
   <div className="flex justify-center gap-2">
+    <form onSubmit={handleSubmit} className="flex gap-2">
     <input
       type="text"
       name="letters"
       required
       maxLength="1"
+      onChange={(e) => setLetter(e.target.value)}
+      value={letter}
+      ref={letterInputRef}
       className="border border-green-300 rounded-md px-2 w-20 text-black"
     />
     <button
@@ -37,8 +57,13 @@ function GameOn({LetterVerify}) {
     >
       Jogar!
     </button>
+    </form>
   </div>
-   <img src="src/assets/FUNDOVERDE.png" alt="" className="h-54 w-72 mt-4 p-5"/>
+  <p>letras já utilizadas:</p>
+  {wrongLetters.map((letter, i) => (
+    <span key={i} className="text-red-600 text-xl mr-2">{letter}, </span>
+  ))}
+   <img src="src/assets/FUNDOVERDE.png" alt="" className="h-54 w-72  p-7"/>
 
 </section>
 
