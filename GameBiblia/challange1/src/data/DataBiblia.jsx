@@ -1,9 +1,8 @@
 export const DataBibliaList = {
 
    LIBERTADORES: [
-  "Moisés", "Josué", "Gideão", "Sansão", "Davi", "Ester", "Neemias", 
-  "Débora", "Josias", "Elias", "Eliseu", "Josafá", "Josias", "Ezequias",
-  "Calebe", "Samuel", "João Batista"
+  "Moisés", "Josué", "Gideão", "Davi", "Ester", "Neemias", 
+  "Débora", "Josias", "Josafá", "Ezequias"
 ],
 
 PROFETAS_MAIORES: [
@@ -16,56 +15,45 @@ PROFETAS_MENORES: [
 ],
 
 PATRIARCAS: [
-  "Abraão", "Isaque", "Jacó", "José", "Judá", "Efraim", "Benjamim", 
-  "Levi", "Rúben", "Simeão"
+  "Abraão", "Isaque", "Jacó", "Efraim", "Benjamim", 
+  "Levi"
 ],
 
 APOSTOLOS: [
-  "Pedro", "Tiago (filho de Zebedeu)", "João", "André", "Felipe", 
-  "Bartolomeu", "Mateus", "Tomé", "Tiago (filho de Alfeu)", 
-  "Tadeu", "Simão Zelote", "Judas Iscariotes", "Paulo", "Barnabé",
+  "Pedro", "Tiagodezebedeu", "João", "André", "Felipe", 
+  "Bartolomeu", "Mateus", "Tomé", "TiagodeAlfeu", 
+  "Tadeu", "SimãoZelote", "JudasIscariotes", "Paulo",
   "Silas", "Timóteo", "Matias", "Marcos"
 ],
 
 MULHERES_MARCANTES: [
   "Sara", "Rebeca", "Raquel", "Miriã", "Débora", "Rute", "Ester", 
-  "Maria (mãe de Jesus)", "Maria Madalena", "Ana", "Abigail", "Hulda",
+  "Maria", "MariaMadalena", "Ana", "Abigail",
   "Joquebede", "Noemi", "Lia", "Marta"
 ],
 
 REIS_ISRAEL: [
-  "Saul", "Davi", "Salomão", "Jeroboão", "Ezequias", "Josias", 
-  "Acabe", "Manassés", "Amom", "Jeremias"
+  "Saul", "Davi", "Salomão", "Jeroboão", "Josias"
 ],
 
 INIMIGOS_ISRAEL: [
-    "Egito", 
-  "Amaleque", "Filisteus", "Babilônios", "Assírios", "Cananeus", "Moabitas", 
-  "Amomitas", "Edomitas", "Midianitas", "Fenícios", "Persas"
+    "Egito", "Filisteus", "Babilônios", "Assírios", "Moabitas", 
+  "Fenícios", "Persas"
 ],
 
 PERSONAGENS_NT: [
   "Jesus", "João Batista", "Lázaro", 
-  "Paulo", "Barnabé", "Silas", "Timóteo", "Pedro", "Tiago (irmão de Jesus)", 
-  "Maria Madalena", "Mateus", "Lucas", "Maria de Betânia", "Judas Tadeu"
+  "Paulo", "Barnabé", "Silas", "Timóteo", "Pedro", 
+  "Mateus", "Lucas", "JudasTadeu"
 ],
 
 PERSONAGENS_AT: [
-    "Esau", "Jacó", "José do Egito", "Arão", "Miriã", "Elias", "Eliseu", "Amós", "Miquéias" , "Zacarias" , "Ageu" , "Malaquias"
-],
-
-MILAGRES: [
-  "Queda das muralhas de Jericó", 
-  "Multiplicação dos pães", "Cura do cego de jericó", "Ressurreição de Lázaro", 
-  "Daniel na cova dos leões", 
-  "Jesus anda sobre as águas", "Transformação da água em vinho", 
-  "Filha de Jairo", "Cura da sogra de Pedro", "Endemoninhados de Gadara"
+    "Esau", "Jacó", "José", "Arão", "Miriã", "Elias", "Eliseu", "Amós", "Miquéias" , "Zacarias" , "Ageu" , "Malaquias"
 ],
 
 LOCAIS_BIBLICOS: [
-  "Egito", "Deserto do Sinai", "Jerusalém", "Belém", "Nazaré", 
-  "Mar da Galileia", "Canaã", "Monte Sinai", "Monte Carmelo", 
-  "Rio Jordão", "Samaria", "Betânia", "Jericó", "Galileia", "Damasco", "Corinto", "Éfeso", "Roma", "Babilônia", "Nínive", "Tiro", "Sidom", "Judeia", "Pérsia",  
+  "Egito", "Jerusalém", "Belém", "Nazaré", 
+ "Canaã", "Samaria", "Betânia", "Jericó", "Galileia", "Damasco", "Corinto", "Éfeso", "Roma", "Babilônia", "Nínive"  
 ]
 
 }

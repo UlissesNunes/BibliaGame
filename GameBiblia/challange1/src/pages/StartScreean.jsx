@@ -3,7 +3,8 @@
 function StartScreean({StartGameOn}) {
   return (
 <>
-  <main className="flex flex-col items-center justify-start h-screen bg-green-50">
+  <main className="flex flex-col  items-center justify-start h-screen 
+  bg-gradient-to-b from-green-50  to-green-100">
     <h1 className="pt-6 pl-2 pr-2 text-center text-sm font-bold text-green-950">
       DESAFIO: Garanta a maior pontuação no jogo, são perguntas bíblicas onde você deverá preencher o nome de acordo com a dica fornecida.
     </h1>

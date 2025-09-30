@@ -4,7 +4,7 @@ import './GameBibliaGlobal.css'
 //data
 import {DataBibliaList} from "./data/DataBiblia"
 // react hooks
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 //pages
 import HeaderGame from './pages/HeaderGame'
 import FooterGame from './pages/FooterGame'
@@ -72,7 +72,13 @@ const StartGameOn = () => {
     setGameStage(stages[1])
   }
 
-  const LetterVerify = (letter) => {
+
+const LetterVerify = (letter) => {
+  // Se a 'letter' não for uma letra, ele ignora.
+  if (typeof letter !== 'string' || letter.length !== 1) {
+      return;
+  }
+  
   const normalizedLetter = letter.toLowerCase()
 
   //verifica se a letra já foi utilizada
@@ -82,19 +88,37 @@ const StartGameOn = () => {
 
 //coloca a letra na lista de certas ou erradas
   if(letters.includes(normalizedLetter)){
-    setGuessedLetters((actualGuessedLetters) => [...actualGuessedLetters, normalizedLetter])
+    setGuessedLetters((actualGuessedLetters) => [
+      ...actualGuessedLetters, normalizedLetter])
     setScore((actualScore) => actualScore + 100)
   } else {
-    setWrongLetters((actualWrongLetters) => [...actualWrongLetters, normalizedLetter])
+    setWrongLetters((actualWrongLetters) => [
+      ...actualWrongLetters, normalizedLetter])
     setGuesses((actualGuesses) => actualGuesses - 1)
-
-
   }
-
   }
+  const clearLetterStates = () => {
+    setGuessedLetters([])
+    setWrongLetters([])
+  }
+   useEffect(() => {
+    if (guesses <= 0) {
+      clearLetterStates();
+      // Transiciona para a tela de 'end' (game over)
+      setGameStage(stages[2]); 
+    }
+  }, [guesses]);
+
+
+  
+    
   const retryGame = () => {
+
+    setScore(0)
+    setGuesses(5)
     setGameStage(stages[0])
   }
+
   return (
     <>
     <HeaderGame />
@@ -112,7 +136,7 @@ const StartGameOn = () => {
     score={score}
     />}
 
-   { gameStage.name === "end" && <GameOverBiblia retryGame={retryGame} />}
+   { gameStage.name === "end" && <GameOverBiblia retryGame={retryGame} score={score} />}
 
     <FooterGame />
 
