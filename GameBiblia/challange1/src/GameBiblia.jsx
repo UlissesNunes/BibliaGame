@@ -73,9 +73,25 @@ const StartGameOn = () => {
   }
 
   const LetterVerify = (letter) => {
-   console.log(letter)
+  const normalizedLetter = letter.toLowerCase()
+
+  //verifica se a letra já foi utilizada
+  if(guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)){
+    return
   }
 
+//coloca a letra na lista de certas ou erradas
+  if(letters.includes(normalizedLetter)){
+    setGuessedLetters((actualGuessedLetters) => [...actualGuessedLetters, normalizedLetter])
+    setScore((actualScore) => actualScore + 100)
+  } else {
+    setWrongLetters((actualWrongLetters) => [...actualWrongLetters, normalizedLetter])
+    setGuesses((actualGuesses) => actualGuesses - 1)
+
+
+  }
+
+  }
   const retryGame = () => {
     setGameStage(stages[0])
   }

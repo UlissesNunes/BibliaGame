@@ -27,9 +27,9 @@ function GameOn({LetterVerify,
       ">
        {letters.map((letter, i) => (
         guessedLetters.includes(letter) ? (
-          <span key={i} className="border-b-4 border-green-900 w-10 h-12 text-center text-white">{letter} </span>
+          <span key={i} className="border-4 border-green-900 w-10 h-14 text-center text-black">{letter} </span>
         ) : (
-          <span key={i} className="border-b-4 border-green-900 w-10 text-center"> </span>
+          <span key={i} className="border-4 border-green-900 w-10 text-center"> </span>
         )
        ))} 
       </section>
