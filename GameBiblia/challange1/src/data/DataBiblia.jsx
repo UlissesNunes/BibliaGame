@@ -20,8 +20,8 @@ PATRIARCAS: [
 ],
 
 APOSTOLOS: [
-  "Pedro", "Tiagodezebedeu", "João", "André", "Felipe", 
-  "Bartolomeu", "Mateus", "Tomé", "TiagodeAlfeu", 
+  "Pedro", "Tiago", "João", "André", "Felipe", 
+  "Bartolomeu", "Mateus", "Tomé", "Tiago", 
   "Tadeu", "SimãoZelote", "JudasIscariotes", "Paulo",
   "Silas", "Timóteo", "Matias", "Marcos"
 ],

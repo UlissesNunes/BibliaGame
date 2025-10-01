@@ -22,7 +22,7 @@ function GameOn({LetterVerify,
       <h1 className=" flex text-green-900 text-4xl p-2 mb-3 font-bold">Quem sou eu?</h1>
       <h3 className="flex text-green-950 text-sm mb-4 italic "
       >Dica sobre a palavra:<span className="text-green-700 pl-1"><strong className="font-sans">{pickedCategory }</strong></span></h3>
-      <p className="p-2 text-green-900 ">Você ainda tem <strong>{guesses}</strong> tentativa(s)</p>
+      <p className="p-2 text-green-900 ">Você tem <strong>{guesses}</strong> tentativa(s)</p>
       <section className="flex flex-wrap text-uppercase text-3xl mb-3 gap-2 bg-gradient-to-b from-white  to-green-50 border-4 border-green-900 p-8 rounded-lg 
       ">
        {letters.map((letter, i) => (
@@ -37,8 +37,8 @@ function GameOn({LetterVerify,
       </section>
 
     <section className=" p-2">
-  <p className="text-green-900 font-mono w-auto text-sm mb-4 font-bold">
-    Tente acertar uma letra da palavra :
+  <p className="text-green-900 font-mono w-auto text-sm mb-2 font-bold">
+   Adicione uma letra na caixa:
   </p>
 
   <div className="flex justify-center gap-2">
@@ -55,7 +55,7 @@ function GameOn({LetterVerify,
     />
     <button
       className="bg-green-300 rounded-md px-5 py-2 text-green-900 font-bold hover:bg-green-400 transition duration-300"
-      onClick={LetterVerify}
+      
     >
       Jogar!
     </button>
@@ -63,7 +63,7 @@ function GameOn({LetterVerify,
   </div>
   <p className="text-green-900 flex justify-center p-3 mt--3">letras já utilizadas :</p>
   {wrongLetters.map((letter, i) => (
-    <span key={i} className="text-red-600 text-xl align-middle font-bold p-1 mt--5 ">{letter}, </span>
+    <span key={i} className="text-red-600 text-xl align-middle font-bold p-1 ">{letter}, </span>
   ))}
    
 

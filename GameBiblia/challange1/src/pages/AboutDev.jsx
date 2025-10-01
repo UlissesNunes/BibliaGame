@@ -2,10 +2,10 @@
 
 function AboutDev() {
   return (
-    <section className=" p-5 bg-green-50 border-t-4 border-green-700 shadow-lg rounded-lg mx-auto max-w-lg">
+    <section className=" p-5 bg-green-50 border-t-4 border-green-700 shadow-lg rounded-lg mx-auto max-w-lg xl:max-w-full xl:px-20"> 
       
      
-      <h2 className="text-center text-2xl font-extrabold text-green-900 mb-4 border-b-2 border-green-200 pb-2">
+      <h2 className="text-center text-2xl font-bold text-green-900 mb-4 border-b-2 border-green-200 pb-2  xl:text-3xl">
         Sobre o Jogo
       </h2>
 
@@ -18,10 +18,10 @@ function AboutDev() {
         </div>
         
         {/* Nome e Descrição */}
-        <p className="text-lg font-semibold text-green-900">
+        <p className="text-lg font-semibold text-green-900 xl:text-2xl">
           Feito por Ulisses
         </p>
-        <p className="text-xs text-green-950 mt-2 max-w-xs">
+        <p className="text-xs text-green-950 mt-2 max-w-xs xl:text-lg xl:max-w-2xl">
           Um projeto React desenvolvido com a missão de tornar o aprendizado sobre a Bíblia divertido e desafiador.
           Obrigado por jogar.
         </p>

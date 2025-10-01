@@ -4,7 +4,7 @@ import './GameBibliaGlobal.css'
 //data
 import {DataBibliaList} from "./data/DataBiblia"
 // react hooks
-import { useState, useEffect} from 'react'
+import { useState, useEffect,} from 'react'
 //pages
 import HeaderGame from './pages/HeaderGame'
 import FooterGame from './pages/FooterGame'
@@ -32,11 +32,11 @@ function GameBiblia() {
 
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongLetters, setWrongLetters] = useState([])
-  const [guesses, setGuesses] = useState(3)
+  const [guesses, setGuesses] = useState(10)
   const [score, setScore] = useState(0)
 
 // function que busca a categoria e a palavra aleatoria 
-  const pickedBibliandcategory = () => {
+  const pickedBibliandcategory =  () => {
     const categories = Object.keys(dataBiblia)
        const category = categories[Math.floor(Math.random() * categories.length)]
     console.log(category)
@@ -66,7 +66,7 @@ const StartGameOn = () => {
 
   setGuessedLetters([])
   setWrongLetters([])
-  setGuesses(5)
+  setGuesses(10)
   setScore(0)
 
     setGameStage(stages[1])
@@ -110,12 +110,26 @@ const LetterVerify = (letter) => {
   }, [guesses]);
 
 
+  useEffect(() => {
+    const LettersÚnicos = [...new Set(letters)]
+    //condição de vitoria
+    if(guessedLetters.length === LettersÚnicos.length){
+      //adiciona pontos
+      setScore((actualScore) => actualScore += 100)
+      //reinicia o jogo com uma nova palavra
+      pickedBibliandcategory()
+      clearLetterStates()
+    }
+  }, [guessedLetters, letters, pickedList ])
+
+
+
   
     
   const retryGame = () => {
 
     setScore(0)
-    setGuesses(5)
+    setGuesses(10)
     setGameStage(stages[0])
   }
 
