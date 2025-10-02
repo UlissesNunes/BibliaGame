@@ -1,5 +1,5 @@
 import AboutDev from "./AboutDev"
-import FooterGame from "./FooterGame"
+
 
 
 function GameOverBiblia({retryGame, score}) {

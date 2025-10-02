@@ -4,7 +4,7 @@ import './GameBibliaGlobal.css'
 //data
 import {DataBibliaList} from "./data/DataBiblia"
 // react hooks
-import { useState, useEffect,} from 'react'
+import { useState, useEffect, useCallback,} from 'react'
 //pages
 import HeaderGame from './pages/HeaderGame'
 import FooterGame from './pages/FooterGame'
@@ -36,7 +36,7 @@ function GameBiblia() {
   const [score, setScore] = useState(0)
 
 // function que busca a categoria e a palavra aleatoria 
-  const pickedBibliandcategory =  () => {
+  const pickedBibliandcategory = useCallback(  () => {
     const categories = Object.keys(dataBiblia)
        const category = categories[Math.floor(Math.random() * categories.length)]
     console.log(category)
@@ -57,7 +57,8 @@ console.log(letterPrincipal)
     setPickedList( letterPrincipal) 
     setPickedCategory( category)
     setLetters( letterDestructured)
-};
+}
+, [dataBiblia]);
 
 
 const StartGameOn = () => {
@@ -120,7 +121,7 @@ const LetterVerify = (letter) => {
       pickedBibliandcategory()
       clearLetterStates()
     }
-  }, [guessedLetters, letters, pickedList ])
+  }, [guessedLetters, letters, pickedList , pickedBibliandcategory ])
 
 
 

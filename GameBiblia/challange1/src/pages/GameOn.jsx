@@ -18,26 +18,26 @@ function GameOn({LetterVerify,
   return (
     <>
     <main className="flex flex-col items-center h-screen bg-gradient-to-b from-green-50  to-green-200">
-      <span className=" text-green-900 text-sm mb-10 p-3 font-medium">Pontuação: <strong>{score}</strong></span>
-      <h1 className=" flex text-green-900 text-4xl p-2 mb-3 font-bold">Quem sou eu?</h1>
-      <h3 className="flex text-green-950 text-sm mb-4 italic "
-      >Dica sobre a palavra:<span className="text-green-700 pl-1"><strong className="font-sans">{pickedCategory }</strong></span></h3>
-      <p className="p-2 text-green-900 ">Você tem <strong>{guesses}</strong> tentativa(s)</p>
-      <section className="flex flex-wrap text-uppercase text-3xl mb-3 gap-2 bg-gradient-to-b from-white  to-green-50 border-4 border-green-900 p-8 rounded-lg 
+      <span className=" text-green-900 text-sm mb-10 p-3 font-medium lg:text-xl lg:p-5">Pontuação: <strong>{score}</strong></span>
+      <h1 className=" flex text-green-900 text-4xl p-2 mb-3 font-bold lg:text-5xl lg:p-5">Quem sou eu?</h1>
+      <h3 className="flex text-green-950 text-sm mb-4 italic lg:text-xl lg:p-5 "
+      >Dica sobre a palavra:<span className="text-green-700 pl-2 lg:text-xl lg:pl-3 "><strong className="font-sans">{pickedCategory }</strong></span></h3>
+      <p className="p-2 text-green-900 lg:text-xl lg:p-5">Você tem <strong>{guesses}</strong> tentativa(s)</p>
+      <section className="flex flex-wrap text-uppercase text-3xl mb-3 gap-2 bg-gradient-to-b from-white  to-green-50 border-4 border-green-900 p-8 rounded-lg lg:gap-4 lg:mb-6 lg:w-4/5 lg:justify-center lg:rounded-xl 2xl:text-6xl 2xl:gap-6 2xl:p-14 2xl:mb-10 2xl:border-12 2xl:rounded-2xl 
       ">
        {letters.map((letter, i) => (
         guessedLetters.includes(letter) ? (
           <span key={i} className="flex justify-center items-center w-10 h-10 font-mono text-xl 
-                    border-4 border-green-950 font-bold uppercase bg-white"><strong>{letter}</strong> </span>
+                    border-4 border-green-950 font-bold uppercase bg-white lg:text-4xl lg:w-16 lg:h-16"><strong>{letter}</strong> </span>
         ) : (
           <span key={i} className=" flex justify-center items-center w-10 h-10 font-mono text-xl 
-                    border-4 border-green-950 font-bold uppercase bg-white"> </span>
+                    border-4 border-green-950 font-bold uppercase bg-white lg:text-4xl lg:w-16 lg:h-16"> </span>
         )
        ))} 
       </section>
 
     <section className=" p-2">
-  <p className="text-green-900 font-mono w-auto text-sm mb-2 font-bold">
+  <p className="text-green-900 font-mono w-auto text-sm mb-2 font-bold lg:text-base lg:p-5">
    Adicione uma letra na caixa:
   </p>
 
@@ -61,7 +61,7 @@ function GameOn({LetterVerify,
     </button>
     </form>
   </div>
-  <p className="text-green-900 flex justify-center p-3 mt--3">letras já utilizadas :</p>
+  <p className="text-green-900 flex justify-center p-3 mt--3 lg:text-xl lg:p-5">letras já utilizadas :</p>
   {wrongLetters.map((letter, i) => (
     <span key={i} className="text-red-600 text-xl align-middle font-bold p-1 ">{letter}, </span>
   ))}
