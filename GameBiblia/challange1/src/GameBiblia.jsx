@@ -1,4 +1,3 @@
-
 //css
 import './GameBibliaGlobal.css'
 //data
@@ -122,9 +121,6 @@ const LetterVerify = (letter) => {
       clearLetterStates()
     }
   }, [guessedLetters, letters, pickedList , pickedBibliandcategory ])
-
-
-
   
     
   const retryGame = () => {
@@ -155,12 +151,8 @@ const LetterVerify = (letter) => {
 
     <FooterGame />
 
-   
-
     </>
   )
 }
 
   export default GameBiblia
-
-
