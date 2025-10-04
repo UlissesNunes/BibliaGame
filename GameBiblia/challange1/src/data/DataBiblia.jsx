@@ -1,59 +1,58 @@
 export const DataBibliaList = {
 
    LIBERTADORES: [
-  "Moisés", "Josué", "Gideão", "Davi", "Ester", "Neemias", 
-  "Débora", "Josias", "Josafá", "Ezequias"
+  "Moises", "Josue", "Gideao", "Ester", "Neemias", 
+  "Debora", "Josias", "Josafa", "Ezequias"
 ],
 
 PROFETAS_MAIORES: [
-  "Isaías", "Jeremias", "Ezequiel", "Daniel", "Elias", "Eliseu"
+  "Isaias", "Jeremias", "Ezequiel", "Daniel", "Elias", "Eliseu"
 ],
 
 PROFETAS_MENORES: [
-  "Oséias", "Joel", "Amós", "Obadias", "Jonas", "Miquéias", 
+  "Oseias", "Joel", "Amos", "Obadias", "Jonas", 
   "Naum", "Habacuque", "Sofonias", "Ageu", "Zacarias", "Malaquias"
 ],
 
 PATRIARCAS: [
-  "Abraão", "Isaque", "Jacó", "Efraim", "Benjamim", 
+  "Abraao", "Isaque", "Jaco", "Efraim", "Benjamim", 
   "Levi"
 ],
 
 APOSTOLOS: [
-  "Pedro", "Tiago", "João", "André", "Felipe", 
-  "Bartolomeu", "Mateus", "Tomé", "Tiago", 
-  "Tadeu", "SimãoZelote", "JudasIscariotes", "Paulo",
-  "Silas", "Timóteo", "Matias", "Marcos"
+  "Pedro", "Tiago", "Joao", "Andre", "Felipe", 
+  "Bartolomeu", "Mateus", "Tadeu", "SimãoZelote", "JudasIscariotes", "Paulo",
+  "Silas", "Timoteo", "Matias", "Marcos"
 ],
 
 MULHERES_MARCANTES: [
-  "Sara", "Rebeca", "Raquel", "Miriã", "Débora", "Rute", "Ester", 
+  "Sara", "Rebeca", "Raquel", "Miria", "Debora", "Rute", "Ester", 
   "Maria", "MariaMadalena", "Ana", "Abigail",
   "Joquebede", "Noemi", "Lia", "Marta"
 ],
 
 REIS_ISRAEL: [
-  "Saul", "Davi", "Salomão", "Jeroboão", "Josias"
+  "Saul", "Davi", "Salomao", "Jeroboao", "Josias"
 ],
 
 INIMIGOS_ISRAEL: [
-    "Egito", "Filisteus", "Babilônios", "Assírios", "Moabitas", 
-  "Fenícios", "Persas"
+    "Egito", "Filisteus", "Babilonios", "Assirios", "Moabitas", 
+  "Fenicios", "Persas"
 ],
 
 PERSONAGENS_NT: [
-  "Jesus", "João Batista", "Lázaro", 
-  "Paulo", "Barnabé", "Silas", "Timóteo", "Pedro", 
+  "Jesus", "JoaoBatista", "Lázaro", 
+  "Paulo", "Barnabe", "Silas", "Pedro", 
   "Mateus", "Lucas", "JudasTadeu"
 ],
 
 PERSONAGENS_AT: [
-    "Esau", "Jacó", "José", "Arão", "Miriã", "Elias", "Eliseu", "Amós", "Miquéias" , "Zacarias" , "Ageu" , "Malaquias"
+    "Esau", "Jaco", "Jose", "Arao", "Miria", "Elias", "Eliseu", "Miqueias" , "Zacarias" , "Ageu" , "Malaquias"
 ],
 
 LOCAIS_BIBLICOS: [
-  "Egito", "Jerusalém", "Belém", "Nazaré", 
- "Canaã", "Samaria", "Betânia", "Jericó", "Galileia", "Damasco", "Corinto", "Éfeso", "Roma", "Babilônia", "Nínive"  
+  "Egito", "Jerusalem", "Belem", "Nazare", 
+ "Canaa", "Samaria", "Betania", "Jerico", "Galileia", "Damasco", "Corinto", "efeso", "Roma", "Babilonia", "Ninive"  
 ]
 
 }
