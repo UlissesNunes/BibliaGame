@@ -44,7 +44,7 @@ function GameBiblia() {
   
     let letterDestructured = letterPrincipal.split("")
     letterDestructured = letterDestructured.map((l) => l.toLowerCase())
-    console.log(letterDestructured)
+    
 
     setPickedList( letterPrincipal) 
     setPickedCategory( category)
