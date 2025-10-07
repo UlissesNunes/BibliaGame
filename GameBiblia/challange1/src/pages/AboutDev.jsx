@@ -2,7 +2,7 @@
 
 function AboutDev() {
   return (
-    <section className=" p-5 bg-green-50 border-t-4 border-green-700 shadow-lg rounded-lg mx-auto max-w-lg xl:max-w-full xl:px-20"> 
+    <section className=" p-5 bg-green-50 border-t-4 border-green-700 shadow-lg rounded-lg mx-auto max-w-lg md:max-w-full xl:px-20"> 
       
      
       <h2 className="text-center text-2xl font-bold text-green-900 mb-4 border-b-2 border-green-200 pb-2  xl:text-3xl">
@@ -14,7 +14,7 @@ function AboutDev() {
         
         {/* Imagem de Perfil (Substitua por uma imagem real se tiver!) */}
         <div className="w-20 h-20 rounded-full bg-green-300 flex items-center justify-center mb-4 border-4 border-green-600">
-          <span className="text-white "><img src="/src/assets/eu.png" alt="" className="rounded-full " /></span>
+          <span className="text-white "><img src="/assets/eu.png" alt="" className="rounded-full " /></span>
         </div>
         
         {/* Nome e Descrição */}

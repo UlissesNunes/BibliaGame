@@ -11,7 +11,7 @@ function GameOverBiblia({retryGame, score}) {
         <h2 className="text-center text-green-900 text-2xl p-2 m-2 ">Sua pontuação foi: <strong>{score}</strong></h2>
         <button onClick={retryGame} className=" flex justify-center text-center mt-2 bg-green-300 rounded-md px-5 py-2 text-green-900 font-bold hover:bg-green-400 transition duration-300">Jogar Novamente!</button>
 
-        <img src="src/assets/FUNDOVERDE.png" alt="" className="h-52 w-full  md:max-w-xl md:h-64 lg:max-w-1xl xl:max-w-3xl xl:h-2/5 mb-1  p-1 mt-10"/>
+        <img src="/assets/fundoverde.png" alt="" className="h-52 w-full  md:max-w-xl md:h-80 lg:max-w-1xl xl:max-w-2xl xl:h-2/4 mb-1  p-1 mt-10"/>
        
 
      
