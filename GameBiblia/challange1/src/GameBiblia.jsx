@@ -20,7 +20,7 @@ const stages = [
 function GameBiblia() {
   const [gameStage, setGameStage] = useState(stages[0])
   const [dataBiblia] = useState(DataBibliaList)
-  console.log(dataBiblia)
+
 
 //pickdlist = palavra
 //pickdCategory = categoria
@@ -38,16 +38,9 @@ function GameBiblia() {
   const pickedBibliandcategory = useCallback(  () => {
     const categories = Object.keys(dataBiblia)
        const category = categories[Math.floor(Math.random() * categories.length)]
-    console.log(category)
   // function que desestrutura a palavra em letras
   
   const letterPrincipal = dataBiblia[category][Math.floor(Math.random() * dataBiblia[category].length)]
-console.log(letterPrincipal)
-
-    
-
-
-  console.log(letterPrincipal, category)
   
     let letterDestructured = letterPrincipal.split("")
     letterDestructured = letterDestructured.map((l) => l.toLowerCase())
