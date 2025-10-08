@@ -2,6 +2,7 @@
 
 function StartScreean({StartGameOn}) {
   return (
+    
 <>
   <main className="flex flex-col  items-center justify-start h-screen 
   bg-gradient-to-b from-green-50  to-green-100 xl:align-middle xl:items-center">
