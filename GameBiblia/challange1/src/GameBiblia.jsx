@@ -17,6 +17,20 @@ const stages = [
   {id: 3, name: "end"}
 ]
 
+// FORA DO COMPONENTE
+const RECORD_KEY = 'highScoreDoMeuJogo';
+
+// Função para carregar o recorde de forma segura
+const loadHighScore = () => {
+  try {
+    const storedScore = localStorage.getItem(RECORD_KEY);
+    return storedScore ? parseInt(storedScore, 10) : 0;
+  } catch (error) {
+    console.error("Erro ao carregar o recorde:", error);
+    return 0;
+  }
+}; 
+
 function GameBiblia() {
   const [gameStage, setGameStage] = useState(stages[0])
   const [dataBiblia] = useState(DataBibliaList)
@@ -33,7 +47,7 @@ function GameBiblia() {
   const [wrongLetters, setWrongLetters] = useState([])
   const [guesses, setGuesses] = useState(10)
   const [score, setScore] = useState(0)
-
+const [highScore, setHighScore] = useState(loadHighScore)
 // function que busca a categoria e a palavra aleatoria 
   const pickedBibliandcategory = useCallback(  () => {
     const categories = Object.keys(dataBiblia)
@@ -117,12 +131,33 @@ const LetterVerify = (letter) => {
   
     
   const retryGame = () => {
-
-    setScore(0)
-    setGuesses(10)
-    setGameStage(stages[0])
+    
+    // 1. Captura a pontuação final ANTES de resetar o jogo
+    const finalScore = score; 
+    
+    // -----------------------------------------------------------------
+    // LÓGICA DO RECORDE INTEGRADA AQUI
+    // -----------------------------------------------------------------
+    if (finalScore > highScore) {
+      try {
+        // Salva o novo recorde no navegador (Persistência)
+        localStorage.setItem(RECORD_KEY, finalScore.toString());
+        
+        // Atualiza o estado do React (Exibição)
+        setHighScore(finalScore);
+        
+      } catch (error) {
+        console.error("Erro ao salvar o recorde:", error);
+      }
+    }
+    
+    // -----------------------------------------------------------------
+    // LÓGICA DE RESET (Seu código original)
+    // -----------------------------------------------------------------
+    setScore(0)        // Zera a pontuação para a nova partida
+    setGuesses(10)     // Reseta os palpites
+    setGameStage(stages[0]) // Volta para a tela inicial ou GameOn,
   }
-
   return (
     <>
     <HeaderGame />
@@ -138,9 +173,10 @@ const LetterVerify = (letter) => {
    guessedLetters={guessedLetters}
     guesses={guesses} 
     score={score}
+    highScore={highScore}
     />}
 
-   { gameStage.name === "end" && <GameOverBiblia retryGame={retryGame} score={score} />}
+   { gameStage.name === "end" && <GameOverBiblia retryGame={retryGame} score={score} highScore={highScore} />}
 
     <FooterGame />
 

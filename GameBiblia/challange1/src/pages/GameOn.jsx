@@ -1,6 +1,7 @@
 import { useState, useRef } from "react"
+import { FaTrophy } from 'react-icons/fa';
 function GameOn({LetterVerify,
-   pickedCategory, letters, wrongLetters, guessedLetters, guesses, score
+   pickedCategory, letters, wrongLetters, guessedLetters, guesses, score, highScore
 })
 
 { 
@@ -18,7 +19,24 @@ function GameOn({LetterVerify,
   return (
     <>
     <main className="flex flex-col items-center h-screen bg-gradient-to-b from-green-50  to-green-200">
-      <span className=" text-green-900 text-sm mb-10 p-3 font-medium lg:text-xl lg:p-5">Pontuação: <strong>{score}</strong></span>
+      <span className=" text-green-900 text-sm mb-1 p-3 font-medium lg:text-xl lg:p-5">Pontuação: <strong>{score}</strong></span>
+       <div className="
+            mt-0 mb-0 flex items-center space-x-2 
+            bg-green-900 
+            text-yellow-400 
+            border border-yellow-600 
+            px-3 py-1
+            rounded-full 
+            shadow-lg 
+            text-lg font-semibold
+        ">
+            
+            {/* Ícone do Troféu */}
+            <FaTrophy className="text-xl" />
+            
+            {/* Texto do Recorde */}
+            <span>Recorde: {highScore}</span>
+        </div>
       <h1 className=" flex text-green-900 text-4xl p-2 mb-3 font-bold lg:text-5xl lg:p-5">Quem sou eu?</h1>
       <h3 className="flex text-green-950 text-sm mb-4 italic lg:text-xl lg:p-5 "
       >Dica sobre a palavra:<span className="text-green-700 pl-2 lg:text-xl lg:pl-3 "><strong className="font-sans">{pickedCategory }</strong></span></h3>
