@@ -104,6 +104,11 @@ const LetterVerify = (letter) => {
     setGuesses((actualGuesses) => actualGuesses - 1)
   }
   }
+
+
+
+
+
   const clearLetterStates = () => {
     setGuessedLetters([])
     setWrongLetters([])
@@ -116,6 +121,22 @@ const LetterVerify = (letter) => {
     }
   }, [guesses]);
 
+  const skipQuestion = () => {
+    // 1. Punição: Reduz palpites (Exemplo: 2 palpites a menos por pular)
+    setGuesses((actualGuesses) => actualGuesses - 1); 
+    
+    // 2. Limpa as letras da tela (erro e acerto)
+    clearLetterStates(); 
+    
+    // 3. Carrega a próxima palavra e categoria
+    pickedBibliandcategory(); 
+    
+    window.alert("Você pulou a pergunta! Cuidado, você perdeu 1 tentativa.")
+};
+
+const notifyGame = () => {
+  window.alert("No Jogo Bíblico, você pode ganhar pontos acertando as palavras ou perder pontos errando a mesma. Você conseguirá Pular algumas perguntas, porém isso lhe custará 1 tentativa futura.");
+}
 
   useEffect(() => {
     const LettersÚnicos = [...new Set(letters)]
@@ -131,16 +152,10 @@ const LetterVerify = (letter) => {
   
     
   const retryGame = () => {
-    
-    // 1. Captura a pontuação final ANTES de resetar o jogo
     const finalScore = score; 
-    
-    // -----------------------------------------------------------------
-    // LÓGICA DO RECORDE INTEGRADA AQUI
-    // -----------------------------------------------------------------
     if (finalScore > highScore) {
       try {
-        // Salva o novo recorde no navegador (Persistência)
+        // Salva no localStorage (Persistência)
         localStorage.setItem(RECORD_KEY, finalScore.toString());
         
         // Atualiza o estado do React (Exibição)
@@ -151,17 +166,18 @@ const LetterVerify = (letter) => {
       }
     }
     
-    // -----------------------------------------------------------------
-    // LÓGICA DE RESET (Seu código original)
-    // -----------------------------------------------------------------
-    setScore(0)        // Zera a pontuação para a nova partida
-    setGuesses(10)     // Reseta os palpites
-    setGameStage(stages[0]) // Volta para a tela inicial ou GameOn,
+    setScore(0)        
+    setGuesses(10)     
+    setGameStage(stages[0])
   }
   return (
     <>
     <HeaderGame />
- { gameStage.name === "start" && <StartScreean StartGameOn={StartGameOn}/>}
+ { gameStage.name === "start" && <StartScreean 
+ StartGameOn={StartGameOn}
+ notifyGame={notifyGame}
+
+ />}
  
   { gameStage.name === "game" && 
   <GameOn
@@ -174,6 +190,10 @@ const LetterVerify = (letter) => {
     guesses={guesses} 
     score={score}
     highScore={highScore}
+    skipQuestion={skipQuestion}
+   notifyGame={notifyGame}
+   
+ 
     />}
 
    { gameStage.name === "end" && <GameOverBiblia retryGame={retryGame} score={score} highScore={highScore} />}
