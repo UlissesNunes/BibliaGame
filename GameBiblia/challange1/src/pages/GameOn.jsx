@@ -37,6 +37,7 @@ function GameOn({LetterVerify,
             {/* Texto do Recorde */}
             <span>Recorde: {highScore}</span>
         </div>
+        
       <h1 className=" flex text-green-900 text-4xl p-2 mb-3 font-bold lg:text-5xl lg:p-3">Quem sou eu?</h1>
       <h3 className="flex text-green-950 text-sm mb-3 font-light lg:text-lg lg:p-2 "
       >Dica sobre a palavra:<span className="text-green-600  pl-1 lowercase font-normal lg:text-lg lg:pl-"><strong className="font-sans">{pickedCategory }</strong></span></h3>
