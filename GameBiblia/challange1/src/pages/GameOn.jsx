@@ -1,4 +1,5 @@
 import { useState, useRef } from "react"
+
 import { FaTrophy } from 'react-icons/fa';
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import { FaComments } from 'react-icons/fa';  
@@ -41,6 +42,7 @@ function GameOn({LetterVerify,
       <h1 className=" flex text-green-900 text-4xl p-2 mb-3 font-bold lg:text-5xl lg:p-3">Quem sou eu?</h1>
       <h3 className="flex text-green-950 text-sm mb-3 font-light lg:text-lg lg:p-2 "
       >Dica sobre a palavra:<span className="text-green-600  pl-1 lowercase font-normal lg:text-lg lg:pl-"><strong className="font-sans">{pickedCategory }</strong></span></h3>
+
       <p className="p-2 text-green-900 lg:text-xl lg:p-2">Você tem <strong>{guesses}</strong> tentativa(s)</p>
       <section className="flex flex-wrap text-uppercase text-3xl mb-3 gap-2 bg-gradient-to-b from-white  to-green-50 border-4 border-green-900 p-4 rounded-lg lg:gap-4 lg:mb-0 lg:justify-center lg:rounded-xl 2xl:text-3xl 2xl:gap-6 2xl:p-1 2xl:mb-1 2xl:border-12 2xl:rounded-2xl 
       "> 

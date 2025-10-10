@@ -6,6 +6,7 @@ import {DataBibliaList} from "./data/DataBiblia"
 import { useState, useEffect, useCallback,} from 'react'
 //pages
 import HeaderGame from './pages/HeaderGame'
+import SequenceFive from './pages/SequenceFive'
 import FooterGame from './pages/FooterGame'
 import StartScreean from './pages/StartScreean'
 import GameOn from './pages/GameOn'
@@ -43,12 +44,14 @@ function GameBiblia() {
   const [pickedList, setPickedList] = useState("")
   const [pickedCategory, setPickedCategory] = useState("")
   const [letters, setLetters] = useState([]) 
-
+console.log(pickedList)
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongLetters, setWrongLetters] = useState([])
   const [guesses, setGuesses] = useState(10)
   const [score, setScore] = useState(0)
 const [highScore, setHighScore] = useState(loadHighScore)
+
+
 // function que busca a categoria e a palavra aleatoria 
   const pickedBibliandcategory = useCallback(  () => {
     const categories = Object.keys(dataBiblia)
@@ -58,6 +61,8 @@ const [highScore, setHighScore] = useState(loadHighScore)
   const letterPrincipal = dataBiblia[category][Math.floor(Math.random() * dataBiblia[category].length)]
   
     let letterDestructured = letterPrincipal.split("")
+
+     letterDestructured = letterDestructured.filter(l => l.match(/[a-z]/i));
     letterDestructured = letterDestructured.map((l) => l.toLowerCase())
     
 
@@ -111,17 +116,18 @@ const [isSequenceFiveModalOpen, setIsSequenceFiveModalOpen] = useState(false);
 
 
 
-  const clearLetterStates = () => {
+  const clearLetterStates = useCallback( () => {
     setGuessedLetters([])
     setWrongLetters([])
-  }
+  } ,[setGuessedLetters, setWrongLetters])
    useEffect(() => {
     if (guesses <= 0) {
       clearLetterStates();
       // Transiciona para a tela de 'end' (game over)
       setGameStage(stages[2]); 
+      setWinStreak(0)
     }
-  }, [guesses]);
+  }, [guesses, clearLetterStates, setGameStage, setWinStreak]);
 
   const skipQuestion = () => {
    
@@ -137,6 +143,11 @@ const notifyGame = () => {
 }
 
   useEffect(() => {
+     // ✨ 1. VERIFICAÇÃO DE SEGURANÇA CONTRA DISPARO INICIAL E DUPLO
+    // Se não há letras para adivinhar (ou a palavra foi zerada), saia.
+    if (letters.length === 0) {
+        return; 
+    }
     const LettersÚnicos = [...new Set(letters)]
     //condição de vitoria
     if(guessedLetters.length === LettersÚnicos.length){
@@ -156,7 +167,7 @@ const notifyGame = () => {
       pickedBibliandcategory()
       clearLetterStates()
     }
-  }, [guessedLetters, letters, pickedList , pickedBibliandcategory ])
+  }, [guessedLetters, letters, pickedBibliandcategory, clearLetterStates, setScore, setWinStreak, setIsSequenceFiveModalOpen])
   
   const closeSequenceFiveModal = () => {
     setIsSequenceFiveModalOpen(false);
@@ -205,6 +216,7 @@ const notifyGame = () => {
     highScore={highScore}
     skipQuestion={skipQuestion}
    notifyGame={notifyGame}
+  
    
  
     />}
@@ -216,6 +228,7 @@ const notifyGame = () => {
                 streakCount={winStreak}
             />
         )}
+
         
     <FooterGame />
 
