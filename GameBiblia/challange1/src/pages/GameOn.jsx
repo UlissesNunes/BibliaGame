@@ -87,7 +87,7 @@ function GameOn({LetterVerify,
     </form>
 
   </div>
-  <div className=" bg-black flex  justify-center items-center  w-full   ">
+  <div className="  flex  justify-center items-center  w-full   ">
     <p className="text-green-900 text-lg font-normal flex justify-center p-4 mt-0 lg:text-base  lg:p-3">letras já utilizadas:</p>
     {wrongLetters.map((letter, i) => (
       <span key={i} className="text-red-500  text-base uppercase align-middle font-extrabold p-1 ">{letter}, </span>
