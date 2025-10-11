@@ -41,7 +41,7 @@ INIMIGOS_ISRAEL: [
 ],
 
 PERSONAGENS_NT: [
-  "Jesus", "JoaoBatista", "Lázaro", 
+  "Jesus", "JoaoBatista", "Lazaro", 
   "Paulo", "Barnabe", "Silas", "Pedro", 
   "Mateus", "Lucas", "JudasTadeu"
 ],
