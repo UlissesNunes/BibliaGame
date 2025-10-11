@@ -4,32 +4,46 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
- theme: {
-    extend: {
-      // 1. DEFINIÇÃO DOS KEYFRAMES (O movimento da animação)
-      keyframes: {
-        // Animação para a entrada suave do modal
-        'fade-in': {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        // Animação lenta de 'respiração' para a coroa
-        'bounce-slow': {
-          '0%, 100%': { transform: 'translateY(-8%)' }, // Começa e termina um pouco mais alto
-          '50%': { transform: 'translateY(0)' },        // Ponto mais baixo
-        },
-      },
-      
-      // 2. APLICAÇÃO DOS KEYFRAMES (Como as classes usam o movimento)
-      animation: {
-        // Modal: Entrada suave de 0.3 segundos
-        'fade-in': 'fade-in 0.3s ease-out forwards',
-        // Coroa: Movimento lento e infinito de 2 segundos
-        'bounce-slow': 'bounce-slow 1s ease-in-out infinite',
-      },
+// tailwind.config.js - NOVO CÓDIGO PARA A SEÇÃO 'extend'
+
+extend: {
+  // 1. DEFINIÇÃO DOS KEYFRAMES
+  keyframes: {
+    // Animação para a entrada dramática do modal
+    'scale-up': {
+      '0%': { opacity: '0', transform: 'scale(0.8)' },
+      '100%': { opacity: '1', transform: 'scale(1)' },
+    },
+    // Animação 'bounce-slow' (para o efeito de 'respiração' da coroa)
+    'bounce-slow': {
+      '0%, 100%': { transform: 'translateY(-10%)' }, // Movimento mais acentuado
+      '50%': { transform: 'translateY(0)' },
+    },
+    // Animação 'spin-slow' para as estrelas de bônus
+    'spin-slow': {
+      'from': { transform: 'rotate(0deg)' },
+      'to': { transform: 'rotate(360deg)' },
     },
   },
+  
+  // 2. APLICAÇÃO DOS KEYFRAMES
+  animation: {
+    // Modal: Entrada mais dramática (0.4s)
+    'scale-up': 'scale-up 0.4s ease-out forwards',
+    
+    // Coroa: Movimento lento e infinito
+    'bounce-slow': 'bounce-slow 2s ease-in-out infinite',
+    
+    // Estrelas: Rotação lenta e infinita
+    'spin-slow': 'spin-slow 5s linear infinite',
+  },
+  
+  // 3. ADIÇÃO DE SHADOW NO TEXTO (Opcional, mas melhora o visual)
+  // Se quiser essa sombra, pode ser necessário um plugin, ou você pode usar classes utilitárias.
+  // Para simplificar, vou usar uma sombra sutil apenas com text-shadow
+  // (OBS: text-shadow não é nativo do Tailwind, pode ser necessário um plugin)
+  // Se não quiser usar plugin, remova a classe 'text-shadow-md' do H1.
+
+},
   plugins: [],
 }
-
-  

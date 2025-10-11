@@ -4,10 +4,10 @@ import { FaCrown, FaCheckCircle } from 'react-icons/fa';
 const SequenceFive = ({ onClose, streakCount }) => {
     
     const bonusText = (streakCount === 5) 
-        ? "Você ganhou +1 palpite extra!" 
+        ? "Parabéns! Você ganhou +1 palpite extra!" 
         : `Você mantém sua série de bônus!`;
         
-    const titleText = (streakCount === 5) ? `${streakCount}ª CONSECUTIVA!` : `${streakCount} ACERTO EM SEQUÊNCIA!`;
+    const titleText = (streakCount === 5) ? `${streakCount}ª CONSECUTIVA!` : `${streakCount} ACERTOS EM SEQUÊNCIA!`;
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
