@@ -131,19 +131,19 @@ const [isSequenceFiveModalOpen, setIsSequenceFiveModalOpen] = useState(false);
 
   const skipQuestion = () => {
    
-    setGuesses((actualGuesses) => actualGuesses - 1); 
+    
     clearLetterStates(); 
     pickedBibliandcategory(); 
     
-    window.alert("Você pulou a pergunta! Cuidado, você perdeu 1 tentativa.")
+    window.alert("Você pulou a pergunta!.")
 };
 
 const notifyGame = () => {
-  window.alert("No Jogo Bíblico, você pode ganhar pontos acertando as palavras ou perder pontos errando a mesma. Você conseguirá Pular algumas perguntas, porém isso lhe custará 1 tentativa futura.");
+  window.alert("No Jogo Bíblico, você pode ganhar pontos acertando as palavras ou perder pontos errando a mesma. Você conseguirá Pular algumas perguntas.");
 }
 
   useEffect(() => {
-     // ✨ 1. VERIFICAÇÃO DE SEGURANÇA CONTRA DISPARO INICIAL E DUPLO
+     // VERIFICAÇÃO DE SEGURANÇA CONTRA DISPARO INICIAL E DUPLO
     // Se não há letras para adivinhar (ou a palavra foi zerada), saia.
     if (letters.length === 0) {
         return; 
@@ -160,6 +160,7 @@ const notifyGame = () => {
             // Dispara o modal SequenceFive em múltiplos de 5
             if (newStreak % 5 === 0) {
                 setIsSequenceFiveModalOpen(true);
+                setGuesses((actualGuesses) => actualGuesses + 1); 
             }
             return newStreak; // Retorna o novo valor para o estado
         });
@@ -226,6 +227,7 @@ const notifyGame = () => {
             <SequenceFive 
                 onClose={closeSequenceFiveModal} 
                 streakCount={winStreak}
+            
             />
         )}
 

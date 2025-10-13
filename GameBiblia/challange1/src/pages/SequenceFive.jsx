@@ -5,6 +5,7 @@ const SequenceFive = ({ onClose, streakCount }) => {
     
     const bonusText = (streakCount === 5) 
         ? "Parabéns! Você ganhou +1 palpite extra!" 
+    
         : `Você mantém sua série de bônus!`;
         
     const titleText = (streakCount === 5) ? `${streakCount}ª CONSECUTIVA!` : `${streakCount} ACERTOS EM SEQUÊNCIA!`;
