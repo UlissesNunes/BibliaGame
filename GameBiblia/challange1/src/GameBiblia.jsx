@@ -153,7 +153,7 @@ const notifyGame = () => {
     if(guessedLetters.length === LettersÚnicos.length){
       //adiciona pontos
       setScore((actualScore) => actualScore += 100)
-
+      
      setWinStreak((prevStreak) => {
             const newStreak = prevStreak + 1;
 
