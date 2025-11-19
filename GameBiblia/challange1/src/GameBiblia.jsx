@@ -104,6 +104,7 @@ const LetterVerify = (letter) => {
     setGuessedLetters((actualGuessedLetters) => [
       ...actualGuessedLetters, normalizedLetter])
     setScore((actualScore) => actualScore + 100)
+    
   } else {
     setWrongLetters((actualWrongLetters) => [
       ...actualWrongLetters, normalizedLetter])
@@ -153,22 +154,24 @@ const notifyGame = () => {
     if(guessedLetters.length === LettersÚnicos.length){
       //adiciona pontos
       setScore((actualScore) => actualScore += 100)
-      
+     
      setWinStreak((prevStreak) => {
             const newStreak = prevStreak + 1;
 
             // Dispara o modal SequenceFive em múltiplos de 5
-            if (newStreak % 5 === 0) {
+            if (newStreak % 3 === 0) {
                 setIsSequenceFiveModalOpen(true);
                 setGuesses((actualGuesses) => actualGuesses + 1); 
             }
             return newStreak; // Retorna o novo valor para o estado
         });
+        
       //reinicia o jogo com uma nova palavra
       pickedBibliandcategory()
-      clearLetterStates()
+      clearLetterStates() 
+     alert( `Parabéns! Você acertou. A palavra correta é: ${pickedList}`) 
     }
-  }, [guessedLetters, letters, pickedBibliandcategory, clearLetterStates, setScore, setWinStreak, setIsSequenceFiveModalOpen])
+  }, [guessedLetters, pickedList, letters, pickedBibliandcategory, clearLetterStates, setScore, setWinStreak, setIsSequenceFiveModalOpen])
   
   const closeSequenceFiveModal = () => {
     setIsSequenceFiveModalOpen(false);

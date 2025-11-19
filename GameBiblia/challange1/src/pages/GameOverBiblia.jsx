@@ -13,9 +13,9 @@ function GameOverBiblia({retryGame, score,}) {
        
         <button onClick={retryGame} className=" flex justify-center text-center mt-2 bg-green-300 rounded-md px-5 py-2 text-green-900 font-bold hover:bg-green-400 transition duration-300">Jogar Novamente!</button>
 
-        <img src="/assets/fundoverde.png" alt="" className="h-52 w-full  md:max-w-xl md:h-80 lg:max-w-1xl xl:max-w-2xl xl:h-2/4 mb-1  p-1 mt-10"/>
+        <img src="/assets/fundoverde.png" alt="" className="h-52 w-full  md:max-w-lg md:h-60 p-10"/>
        
-<p className="text-green-950 w-34 p-1 text-xs  text-center md:text-sm md:justify-center md:text-center  lg:text-sm xl:mb-20 xl:text-base   2xl:hidden">Tudo posso naquele que me fortalece - <br/><strong>Filipenses 4:13</strong></p>
+<p className="text-green-950 w-30 p-1 text-xs  text-center md:text-sm md:justify-center md:text-center  lg:text-sm ">Tudo posso naquele que me fortalece - <br/><strong>Filipenses 4:13</strong></p>
     
      
     </main>
