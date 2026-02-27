@@ -14,9 +14,11 @@
 
 <div align="center">🛠️ <h3>Stack Tecnológica</h3> <span width:100%><img src="https://cdn.simpleicons.org/react/61DAFB" width="20" height="20" /> React: Biblioteca core para a construção de componentes funcionais e hooks.</span>
  
- <img src="https://cdn.simpleicons.org/tailwindcss/38B2AC" width="20" height="20" /> Tailwind: Utilizado para toda a estilização, garantindo responsividade e tokens de design.<img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="20" height="20" /> JavaScript: Lógica de validação das letras e manipulação do estado do jogo.<img src="https://cdn.simpleicons.org/lucide/FF4500" width="20" height="20" /> Lucide IconsÍcones minimalistas para Troféus, Livros e Chat.</div>
+ <span width=100% ><img src="https://cdn.simpleicons.org/tailwindcss/38B2AC" width="20" height="20" /> Tailwind: Utilizado para toda a estilização, garantindo responsividade e tokens de design.</span>
+ <span width=100%><img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="20" height="20" /> JavaScript: Lógica de validação das letras e manipulação do estado do jogo.</span>
+ <span width=100%><img src="https://cdn.simpleicons.org/lucide/FF4500" width="20" height="20" /> Lucide IconsÍcones minimalistas para Troféus, Livros e Chat.</span>
 
-🧠 Lógica de Jogo (Game Logic)A aplicação utiliza um sistema de estados centralizado para gerenciar a partida:Sorteio: Uma palavra é selecionada aleatoriamente de um banco de dados local baseado no tema.Input: O usuário insere uma letra por vez.Validação: O sistema verifica se a letra pertence à palavra (array.includes()) e atualiza o display ou reduz as tentativas.Conclusão: Ao completar a palavra, o score é incrementado e o recorde é atualizado via localStorage.
+🧠 Lógica de Jogo (Game Logic)A aplicação utiliza um sistema de estados centralizado para gerenciar a partida:Sorteio: Uma palavra é selecionada aleatoriamente de um banco de dados local baseado no tema.Input: O usuário insere uma letra por vez.Validação: O sistema verifica se a letra pertence à palavra (array.includes()) e atualiza o display ou reduz as tentativas.Conclusão: Ao completar a palavra, o score é incrementado e o recorde é atualizado via localStorage.</div>
 
 # <h1 width="20" height="20">🚀 Como Rodar o Game: <h1/>
 
