@@ -1,12 +1,9 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📖 Bíblia Game - Você conhece a Bíblia?O Bíblia Game é uma aplicação web interativa desenvolvida com React e Tailwind CSS. O projeto é um jogo de adivinhação de palavras (estilo "Forca") baseado em personagens, temas e contextos bíblicos, projetado para testar e expandir o conhecimento do usuário de forma lúdica.🚀 Sobre o ProjetoA aplicação desafia os usuários a descobrirem palavras ocultas com base em temas específicos (como "mulheres marcantes"). O objetivo é garantir a maior pontuação possível, preenchendo os quadros com as letras corretas antes que as tentativas se esgotem.Principais Funcionalidades:Sistema de Pontuação: Acompanhamento de pontuação em tempo real e recorde pessoal.Temas Dinâmicos: Filtros por categorias bíblicas específicas.Mecânica de Jogo: Sistema de tentativas limitadas (10 vidas) e registro de letras já utilizadas.Interface Responsiva: Design limpo e intuitivo focado na experiência do usuário.🛠️ Tecnologias UtilizadasEste projeto foi construído utilizando o que há de mais moderno no ecossistema de desenvolvimento web:React.js: Biblioteca principal para construção da interface baseada em componentes.Tailwind CSS: Framework CSS utilitário para um design responsivo, moderno e de rápida estilização.JavaScript (ES6+): Lógica do jogo, manipulação de estados e arrays de dados.Lucide React / Heroicons: Para ícones intuitivos (ícones de troféu, chat e livros).🎨 Interface e DesignO design utiliza uma paleta de cores verde-esmeralda e tons pastéis, transmitindo uma sensação de calma e foco, apropriada para o tema religioso.Telas do Sistema:Início do DesafioMecânica da PartidaApresentação das regras e botão de início.Campo de inserção de letras e feedback visual.🔧 Como Executar o ProjetoClone o repositório:Bashgit clone https://github.com/seu-usuario/biblia-game.git
+Entre no diretório:Bashcd biblia-game
+Instale as dependências:Bashnpm install
+# ou
+yarn install
+Inicie o servidor de desenvolvimento:Bashnpm run dev
+# ou
+yarn dev
+🧠 AprendizadosDurante o desenvolvimento deste projeto, foram aplicados conceitos avançados como:Gerenciamento de estado com useState e useEffect.Lógica de comparação de strings e filtragem de arrays.Estilização condicional com Tailwind (ex: mudar a cor da letra caso esteja correta/errada).Persistência de dados simples (LocalStorage) para salvar o Recorde."Tudo posso naquele que me fortalece." Desenvolvido com 💚 por Ulisses
